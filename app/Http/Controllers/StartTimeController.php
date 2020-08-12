@@ -3,45 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\StartTime;
 
 class StartTimeController extends Controller
 {
     //==========ここから追加==========
     public function index()
     {
-        // ダミーデータ
-        $start_times = [
-            (object) [
-                'id' => 1,
-                'title' => 'タイトル1',
-                'body' => '本文1',
-                'created_at' => now(),
-                'user' => (object) [
-                    'id' => 1,
-                    'name' => 'ユーザー名1',
-                ],
-            ],
-            (object) [
-                'id' => 2,
-                'title' => 'タイトル2',
-                'body' => '本文2',
-                'created_at' => now(),
-                'user' => (object) [
-                    'id' => 2,
-                    'name' => 'ユーザー名2',
-                ],
-            ],
-            (object) [
-                'id' => 3,
-                'title' => 'タイトル3',
-                'body' => '本文3',
-                'created_at' => now(),
-                'user' => (object) [
-                    'id' => 3,
-                    'name' => 'ユーザー名3',
-                ],
-            ],
-        ];
+        $start_times = StartTime::all();
+        // $start_times = StartTime::all()->sortByDesc('created_at');
 
         return view('start_times.index', ['start_times' => $start_times]);
     }
