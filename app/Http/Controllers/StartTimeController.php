@@ -15,4 +15,9 @@ class StartTimeController extends Controller
 
         return view('start_times.index', ['start_times' => $start_times]);
     }
+
+    public function create()
+    {
+        return view('start_times.create');
+    }
 }

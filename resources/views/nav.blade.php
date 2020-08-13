@@ -12,13 +12,13 @@
 
     @guest {{--この行を追加--}}
     <li class="nav-item">
-      <a class="nav-link" href="">ログイン</a>
+      <a class="nav-link" href="{{ route('login') }}">ログイン</a> {{--この行を編集--}}
     </li>
     @endguest {{--この行を追加--}}
 
     @auth {{--この行を追加--}}
     <li class="nav-item">
-      <a class="nav-link" href=""><i class="fas fa-pen mr-1"></i>投稿する</a>
+      <a class="nav-link" href="{{ route('start_times.create') }}"><i class="fas fa-pen mr-1"></i>投稿する</a> {{--この行のhref属性を変更--}}
     </li>
     @endauth {{--この行を追加--}}
 
